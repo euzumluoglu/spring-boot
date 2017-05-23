@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.shopinle.db.entity.CountryIp;
@@ -21,6 +22,7 @@ import com.shopinle.remote.wsdl.generatedsrc.GeoIP;
 @SpringBootTest(classes = { CountryIpRepository.class})
 @EntityScan(basePackages = {"com.shopinle.db.entity"})
 @DataJpaTest
+@Sql(scripts = {"/schema-test.sql"})
 public class CountryIpTest {
 
 	@Autowired
@@ -41,7 +43,7 @@ public class CountryIpTest {
 		geoIP.setReturnCode(200);
 		geoIP.setReturnCodeDetails("success");
 		CountryIp countryIp = new CountryIp(geoIP, value);
-        this.entityManager.persist(countryIp);
+		countryIp = this.entityManager.persist(countryIp);
         List<CountryIp> countryIps = (List<CountryIp>) this.repository.findAll();
         assertThat(countryIps).isNotNull();
         assertThat(countryIps.size()).isEqualTo(1);
