@@ -19,7 +19,7 @@ import com.shopinle.db.entity.CountryIp;
 
 @Configuration
 @EnableBatchProcessing
-public class JobConfig {
+public class ServiceJobConfig {
 
 	@Autowired
 	public JobBuilderFactory jobBuilderFactory;
