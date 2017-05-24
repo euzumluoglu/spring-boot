@@ -23,7 +23,7 @@ public class WsdlConfiguration {
 
 	@Bean
 	public GeoIpClient geoIpClient(Jaxb2Marshaller marshaller) {
-		GeoIpClient client = new GeoIpClient();
+		GeoIpClientImp client = new GeoIpClientImp();
 		client.setDefaultUri(geoipUrl);
 		client.setMarshaller(marshaller);
 		client.setUnmarshaller(marshaller);
