@@ -16,7 +16,7 @@ import com.shopinle.remote.wsdl.generatedsrc.GeoIP;
 public class CountryIp {
 
 	@Id
-	@TableGenerator(name = "EVENT_GEN", table = "SEQUENCES", pkColumnName = "SEQ_NAME", valueColumnName = "SEQ_NUMBER", pkColumnValue = "IP_SEQUENCE", initialValue=4, allocationSize=1)
+	@TableGenerator(name = "EVENT_GEN", table = "SEQUENCES", pkColumnName = "SEQ_NAME", valueColumnName = "SEQ_NUMBER", pkColumnValue = "IP_SEQUENCE", initialValue = 4, allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.TABLE, generator = "EVENT_GEN")
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
@@ -54,7 +54,7 @@ public class CountryIp {
 	public String toString() {
 		return String.format(
 				"CountyIp[id=%d, returnCode='%s', ip='%s, returnCodeDetails='%s, countryName='%s, countryCode='%s, ipId='%d, quote='%s']",
-				ip, returnCode, returnCodeDetails, countryName, countryCode, ipId, quote);
+				id, returnCode, ip, returnCodeDetails, countryName, countryCode, ipId, quote);
 	}
 
 }

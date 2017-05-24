@@ -9,6 +9,7 @@ import org.springframework.ws.soap.client.core.SoapActionCallback;
 import com.shopinle.remote.wsdl.generatedsrc.GetGeoIP;
 import com.shopinle.remote.wsdl.generatedsrc.GetGeoIPResponse;
 
+
 public class GeoIpClient extends WebServiceGatewaySupport {
 
 	private static final Logger log = LoggerFactory.getLogger(GeoIpClient.class);

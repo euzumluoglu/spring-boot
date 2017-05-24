@@ -8,7 +8,7 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 @Configuration
 public class WsdlConfiguration {
 	
-	@Value("${geoip.wsdl.endpoint }")
+	@Value("${geoip.wsdl.endpoint}")
 	private String geoipUrl;
 	
 	@Bean
