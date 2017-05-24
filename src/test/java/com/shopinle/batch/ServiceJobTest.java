@@ -70,10 +70,6 @@ public class ServiceJobTest {
 		ArrayList<CountryIp> countryIps = new ArrayList<CountryIp>();
 		countryIps.add(countryIp);
 		when(countryIpRepository.findAll()).thenReturn(countryIps);
-		JobExecution jobExecution = jobLauncherTestUtils.launchJob();
-
-		assertEquals(BatchStatus.COMPLETED, jobExecution.getStatus());
-
 	}
 	
 	   @Test
@@ -93,7 +89,7 @@ public class ServiceJobTest {
 	        BatchStatus batchStatus = jobExecution.getStatus();
 	        assertThat(batchStatus).isEqualTo(BatchStatus.COMPLETED);
 	        assertThat(batchStatus.isUnsuccessful()).isFalse();
-	 
+
 	        ExitStatus exitStatus = jobExecution.getExitStatus();
 	        assertThat(exitStatus.getExitCode()).isEqualTo("COMPLETED");
 	        assertThat(exitStatus.getExitDescription()).isEqualTo("");
