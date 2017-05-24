@@ -46,7 +46,7 @@ public class CountryIpTest {
 		countryIp = this.entityManager.persist(countryIp);
         List<CountryIp> countryIps = (List<CountryIp>) this.repository.findAll();
         assertThat(countryIps).isNotNull();
-        assertThat(countryIps.size()).isEqualTo(1);
+        assertThat(countryIps.size()).isEqualTo(3);
 
     }
 }

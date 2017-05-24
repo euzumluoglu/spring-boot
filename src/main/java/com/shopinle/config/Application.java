@@ -24,10 +24,7 @@ import com.shopinle.remote.wsdl.GeoIpClient;
 import com.shopinle.remote.wsdl.generatedsrc.GeoIP;
 
 @SpringBootApplication
-//@PropertySource({ 
-//	  "classpath:application.properties"
-//	})
-@ComponentScan({"com.shopinle.remote.rest","com.shopinle.remote.wsdl","com.shopinle.batch"})
+@ComponentScan({"com.shopinle.remote.rest","com.shopinle.remote.wsdl","com.shopinle.service","com.shopinle.batch"})
 @EntityScan(basePackages = {"com.shopinle.db.entity"})
 @EnableJpaRepositories(basePackages={"com.shopinle.db.jpa"})
 public class Application {
