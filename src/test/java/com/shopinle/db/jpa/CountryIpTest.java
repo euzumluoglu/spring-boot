@@ -25,11 +25,19 @@ import com.shopinle.remote.wsdl.generatedsrc.GeoIP;
 @Sql(scripts = {"/schema-test.sql"})
 public class CountryIpTest {
 
-	@Autowired
-    private TestEntityManager entityManager;
+//	@Autowired
+//    private TestEntityManager entityManager;
 
     @Autowired
     private CountryIpRepository repository;
+    
+    @Test
+    public void getCountryIpTest() {
+        CountryIp countryIp =  this.repository.findOne(1L);
+        assertThat(countryIp).isNotNull();
+        assertThat(countryIp.getId()).isEqualTo(1);
+
+    }
 
     @Test
     public void saveCountryIpTest() {
@@ -43,10 +51,19 @@ public class CountryIpTest {
 		geoIP.setReturnCode(200);
 		geoIP.setReturnCodeDetails("success");
 		CountryIp countryIp = new CountryIp(geoIP, value);
-		countryIp = this.entityManager.persist(countryIp);
+		countryIp = this.repository.save(countryIp);//this.entityManager.persist(countryIp);
+		assertThat(countryIp.getId()).isNotNull();
         List<CountryIp> countryIps = (List<CountryIp>) this.repository.findAll();
         assertThat(countryIps).isNotNull();
-        assertThat(countryIps.size()).isEqualTo(3);
+    }
+    
+    @Test
+    public void deleteCountryIpTest() {
+        CountryIp countryIp =  this.repository.findOne(2L);
+        assertThat(countryIp).isNotNull();
+        this.repository.delete(countryIp);
+        countryIp =  this.repository.findOne(2L);
+        assertThat(countryIp).isNull();
 
     }
 }

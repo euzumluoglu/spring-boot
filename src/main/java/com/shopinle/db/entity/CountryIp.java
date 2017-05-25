@@ -50,6 +50,70 @@ public class CountryIp {
 		quote = value.getQuote();
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Integer getReturnCode() {
+		return returnCode;
+	}
+
+	public void setReturnCode(Integer returnCode) {
+		this.returnCode = returnCode;
+	}
+
+	public String getIp() {
+		return ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+
+	public String getReturnCodeDetails() {
+		return returnCodeDetails;
+	}
+
+	public void setReturnCodeDetails(String returnCodeDetails) {
+		this.returnCodeDetails = returnCodeDetails;
+	}
+
+	public String getCountryName() {
+		return countryName;
+	}
+
+	public void setCountryName(String countryName) {
+		this.countryName = countryName;
+	}
+
+	public String getCountryCode() {
+		return countryCode;
+	}
+
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
+	}
+
+	public Long getIpId() {
+		return ipId;
+	}
+
+	public void setIpId(Long ipId) {
+		this.ipId = ipId;
+	}
+
+	public String getQuote() {
+		return quote;
+	}
+
+	public void setQuote(String quote) {
+		this.quote = quote;
+	}
+
 	@Override
 	public String toString() {
 		return String.format(
