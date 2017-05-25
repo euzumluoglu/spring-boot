@@ -10,7 +10,7 @@ Batch 5 sn aralıkla çalışmaktadır. İşlemini bitirmeden yeni bir batch ba�
 
 Unit test çalışmasında schema-test.sql scripti kullanılmaktadır.
 
-#Maven
+# Maven
 
 Aktif profil clean-build olarak tanımlıdır.
 
